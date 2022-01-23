@@ -3,21 +3,33 @@
         Feeling Bored?
     </mat-toolbar>
 </p>
-<p>
-    Let's find you an activity
-</p>
 
-<div class="grid-container">
-    <div>
-        <mat-card>
-            <app-address></app-address>
-        </mat-card> 
+<div class="home">
+    <p>
+        Let's find you an activity
+    </p>
+    
+    <div class="grid-container">
+        <div>
+            <mat-card>
+                <app-address></app-address>
+            </mat-card> 
+        </div>
+        <div>
+            <mat-card>
+                <app-weather></app-weather>
+            </mat-card>
+        </div>
     </div>
     <div>
-        <mat-card>
-            <app-weather></app-weather>
-        </mat-card>
+        <app-activity></app-activity>
     </div>
+    
+    <p> 
+        To get you co-ordinates
+        <a href="https://www.latlong.net/" target="_blank">
+            Click Here
+        </a>
+    </p> 
 </div>
 
-<p> To get you co-ordinates<a href="https://www.latlong.net/" target="_blank">Click Here</a></p> 

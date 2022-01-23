@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.home{
     padding-left: 5%;
     padding-right: 5%;
 }

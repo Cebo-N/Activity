@@ -1,17 +1,18 @@
-<mat-grid-list cols="4" rowHeight="30px">
-    <mat-grid-tile colspan="1" rowspan="3">
-        <img src={{weather?.icon}} alt="Weather Icon" height="90px" >
+<mat-grid-list cols="2" rowHeight="30px">
+    <mat-grid-tile colspan="1" rowspan="1">
+        <h4>Weather : {{" " + weather?.locationName}}</h4>
     </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="3">
-        <p>{{weather?.temperature}}</p>
+    <mat-grid-tile colspan="1" rowspan="2">
+        <img src={{weather?.icon}} alt="Weather Icon" height="60px" >
+        <p>{{weather?.temperature}}&#8451;</p>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="1">
+    <mat-grid-tile colspan="1" rowspan="1">
         <p>{{weather?.description}}</p>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="1">
+    <mat-grid-tile colspan="1" rowspan="1">
         <p>Humidity:{{" " + weather?.humidity}} %</p>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="1">
+    <mat-grid-tile colspan="1" rowspan="1">
         <p>Wind:{{" " + weather?.windSpeed}} km/h</p>
     </mat-grid-tile>
 </mat-grid-list>
