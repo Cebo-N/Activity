@@ -11,7 +11,7 @@ export class WeatherService {
 
   private url = "https://fcc-weather-api.glitch.me/api/current?"
 
-  sendWeather = new Subject();
+  sendWeather = new Subject<WeatherClass>();
 
   constructor(private httpClient : HttpClient) { }
 

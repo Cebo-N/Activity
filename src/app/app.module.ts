@@ -19,6 +19,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatButtonModule } from "@angular/material/button";
     MatToolbarModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [
     ActivityService,

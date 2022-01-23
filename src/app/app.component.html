@@ -1,14 +1,23 @@
-<mat-grid-list cols="1" >
-    <p>
-        <mat-toolbar>
-            Feeling Bored?
-        </mat-toolbar>
-    </p>
-    <p>
-        Let's find you an activity
-    </p>
-    <app-address></app-address>
-    <app-weather></app-weather>
-</mat-grid-list>
+<p style="margin-top: 0;">
+    <mat-toolbar>
+        Feeling Bored?
+    </mat-toolbar>
+</p>
+<p>
+    Let's find you an activity
+</p>
+
+<div class="grid-container">
+    <div>
+        <mat-card>
+            <app-address></app-address>
+        </mat-card> 
+    </div>
+    <div>
+        <mat-card>
+            <app-weather></app-weather>
+        </mat-card>
+    </div>
+</div>
 
 <p> To get you co-ordinates<a href="https://www.latlong.net/" target="_blank">Click Here</a></p> 

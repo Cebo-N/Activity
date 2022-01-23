@@ -11,7 +11,7 @@ export class Weather{
             this.description = desc ? desc : '';
             this.humidity  = hum ? hum : 0;
             this.icon = icon ? icon : '';
-            this.temperature = temp ? temp : 0;
+            this.temperature = temp ? Math.ceil(temp) : 0;
             this.windSpeed = win ? win : 0;
             this.locationName = location ? location : ''
     }
