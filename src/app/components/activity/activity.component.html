@@ -1,37 +1,40 @@
-<mat-card style="margin-top: 20px;">
-    <mat-grid-list cols="2" rowHeight="45px">
-        <mat-grid-tile colspan="1" rowspan="1">
-            <mat-form-field>
-                <mat-label>Types Of Activities </mat-label>
-                <mat-select [(ngModel)]= "selectedActivity" (selectionChange)="selectedType()">
-                    <mat-option *ngFor="let activity of activityTypes" [value]="activity">
-                        {{activity}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1" rowspan="1">
-            <mat-form-field>
-                <mat-label> Participants </mat-label>
-                <mat-select [(ngModel)]="numberOfParticipants" (selectionChange)="selectedNumberOfParticipants()">
-                    <mat-option *ngFor="let participant of participants" [value]="participant.value">
-                        {{participant.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </mat-grid-tile>    
-    </mat-grid-list>
-</mat-card>
-<div *ngIf="activity?.activity">
-    <ul>
-        <li>
-            Activity : {{" " + activity?.activity}}
-        </li>
-        <li>
-            Price : {{" " + activity?.checkPrice()}}
-        </li>
-        <li>
-            Accessibility : {{" " +activity?.checkAvailability()}}
-        </li>
-    </ul>
+<div class="activity">
+    <mat-card style="margin-top: 20px;">
+        <mat-grid-list cols="2" rowHeight="45px">
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-form-field>
+                    <mat-label>Types Of Activities </mat-label>
+                    <mat-select [(ngModel)]= "selectedActivity" (selectionChange)="selectedType()">
+                        <mat-option *ngFor="let activity of activityTypes" [value]="activity">
+                            {{activity}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-form-field>
+                    <mat-label> Participants </mat-label>
+                    <mat-select [(ngModel)]="numberOfParticipants" (selectionChange)="selectedNumberOfParticipants()">
+                        <mat-option *ngFor="let participant of participants" [value]="participant.value">
+                            {{participant.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>    
+        </mat-grid-list>
+    </mat-card>
+    <div *ngIf="activity?.activity">
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                Activity : {{" " + activity?.activity}}
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                Price : {{" " + activity?.checkPrice()}}
+            </mat-list-item >
+            <mat-list-item role="listitem">
+                Accessibility : {{" " +activity?.checkAvailability()}}
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <mat-divider></mat-divider>  
 </div>

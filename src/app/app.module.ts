@@ -22,6 +22,8 @@ import { MatButtonModule } from "@angular/material/button";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [
     ActivityService,

@@ -13,7 +13,7 @@ export class CompanionComponent implements OnInit {
   companions : Companion[] = [];
   
   numberOfCompanions : number = 1;
-  isFirstTime = false
+  
   constructor(private companionService : CompanionService, private activityService : ActivityService) { }
 
   ngOnInit(): void {

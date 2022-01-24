@@ -1,10 +1,24 @@
+<div class="companion">
+    <mat-list style="padding-bottom: 10%;">
+        <div mat-subheader class="size">Companions</div>
+        <mat-list-item *ngFor="let companion of companions">
+            <img src={{companion.picture}} width="50px" height="50px">
+            <div mat-line>
+                
+                <span class="spacer">{{companion.firstname}}</span>
+                <span>{{companion.lastaname}}</span>
+            </div>
+            
+        </mat-list-item>
+    </mat-list>  
+</div>
 
-<mat-grid-list *ngFor="let companion of companions" cols="2" rowHeight="45" >
+<!-- <mat-grid-list *ngFor="let companion of companions" cols="1" rowHeight="55" >
     <mat-grid-tile colspan="1">
         <img src={{companion.picture}}>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <span>{{companion.firstname}}</span>
+        <span class="spacer">{{companion.firstname}}</span>
         <span>{{companion.lastaname}}</span>
     </mat-grid-tile>
-</mat-grid-list>
+    <mat-divider></mat-divider>
+</mat-grid-list> -->
+
