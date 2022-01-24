@@ -89,6 +89,12 @@ export class ActivityComponent implements OnInit {
   }
   selectedNumberOfParticipants(){
     this.getNumberOfParticipants(this.numberOfParticipants ? this.numberOfParticipants : 1)
+    this.sendNumberOfCompanions()
+  }
+
+  sendNumberOfCompanions(){
+    this.activityService.communicateNumberOfCompanions(
+      this.numberOfParticipants ? this.numberOfParticipants : 1)
   }
 
 }

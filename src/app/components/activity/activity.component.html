@@ -22,7 +22,7 @@
         </mat-grid-tile>    
     </mat-grid-list>
 </mat-card>
-<div>
+<div *ngIf="activity?.activity">
     <ul>
         <li>
             Activity : {{" " + activity?.activity}}

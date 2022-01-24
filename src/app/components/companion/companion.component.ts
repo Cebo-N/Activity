@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivityService } from 'src/app/services/activity.service';
+import { CompanionService } from 'src/app/services/companion.service';
+import { Companion } from '../../models/Companion';
 
 @Component({
   selector: 'app-companion',
@@ -6,10 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./companion.component.css']
 })
 export class CompanionComponent implements OnInit {
+  
+  companions : Companion[] = [];
+  
+  numberOfCompanions : number = 1;
 
-  constructor() { }
+  constructor(private companionService : CompanionService, private activityService : ActivityService) { }
 
   ngOnInit(): void {
+
+    this.companionService.getCompanions(this.numberOfCompanions)
+    .subscribe( comp =>{
+      let newCompanion = new Companion(
+        comp.results[0].name.first,
+        comp.results[0].name.last,
+        comp.results[0].picture.medium
+      )
+      this.companions.push(newCompanion)
+      console.log(this.numberOfCompanions)
+    })
+
+    this.activityService.sendNumberOfCompanions
+    .subscribe((comp) => {
+      this.numberOfCompanions = comp; 
+      console.log(comp)
+    })
   }
+  
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {Activity} from '../models/activity';
-import { Observable, tap} from "rxjs";
+import { Observable, tap, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,8 @@ import { Observable, tap} from "rxjs";
 export class ActivityService {
 
   private url = "http://www.boredapi.com/api/activity";
+
+  sendNumberOfCompanions = new Subject<number>()
 
   constructor(private httpClient : HttpClient) { }
 
@@ -33,5 +35,10 @@ export class ActivityService {
       tap(_ => console.log("Fetched an activity with number of a participants"))
     )
     return activity
+  }
+
+  //Send number of companions to the companions component
+  communicateNumberOfCompanions(companions : number){
+    this.sendNumberOfCompanions.next(companions);
   }
 }

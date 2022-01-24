@@ -34,7 +34,8 @@ export class AddressComponent implements OnInit {
       });
 
   }
-
+  //Notify weather component 
+  //Share the same Weather Object
   sendWeatherToSibling(){
     this.weatherService.communicateWeather(
       this.weatherForecast ? this.weatherForecast : new Weather()
