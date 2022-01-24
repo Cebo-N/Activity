@@ -13,10 +13,20 @@ export class CompanionComponent implements OnInit {
   companions : Companion[] = [];
   
   numberOfCompanions : number = 1;
-
+  isFirstTime = false
   constructor(private companionService : CompanionService, private activityService : ActivityService) { }
 
   ngOnInit(): void {
+
+    this.activityService.sendNumberOfCompanions
+    .subscribe((comp) => {
+      this.numberOfCompanions = comp;
+      this.companions = []
+      this.displayCompanions()
+    })
+  }
+
+  displayCompanions(){
 
     this.companionService.getCompanions(this.numberOfCompanions)
     .subscribe( comp =>{
@@ -26,15 +36,8 @@ export class CompanionComponent implements OnInit {
         comp.results[0].picture.medium
       )
       this.companions.push(newCompanion)
-      console.log(this.numberOfCompanions)
-    })
-
-    this.activityService.sendNumberOfCompanions
-    .subscribe((comp) => {
-      this.numberOfCompanions = comp; 
-      console.log(comp)
+  
     })
   }
   
-
 }
