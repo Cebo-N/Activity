@@ -19,4 +19,33 @@ export class Activity{
             this.key = key ? key : '';
             this.accessibility = accessibility ? accessibility : 0
     }
+
+    checkPrice(){
+        if(this.price == 0){
+          return "Free"
+        }
+        else if(this.price < 0.4){
+          return "Cheap"
+        }
+        else if(this.price < 0.7){
+          return "Affodable"
+        }
+        else {
+          return 'Expensive'
+        }
+    }
+
+    checkAvailability(){
+        if(this.accessibility < 0.4){
+            return "Easy"
+        }
+        else if(this.accessibility < 0.7){
+            return "Meduim"
+        }
+        else{
+            return "Hard"
+        }
+    }
+
+
 }

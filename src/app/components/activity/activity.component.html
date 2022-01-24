@@ -3,7 +3,7 @@
         <mat-grid-tile colspan="1" rowspan="1">
             <mat-form-field>
                 <mat-label>Types Of Activities </mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]= "selectedActivity" (selectionChange)="selectedType()">
                     <mat-option *ngFor="let activity of activityTypes" [value]="activity">
                         {{activity}}
                     </mat-option>
@@ -13,7 +13,7 @@
         <mat-grid-tile colspan="1" rowspan="1">
             <mat-form-field>
                 <mat-label> Participants </mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]="numberOfParticipants" (selectionChange)="selectedNumberOfParticipants()">
                     <mat-option *ngFor="let participant of participants" [value]="participant.value">
                         {{participant.viewValue}}
                     </mat-option>
@@ -23,5 +23,15 @@
     </mat-grid-list>
 </mat-card>
 <div>
-    
+    <ul>
+        <li>
+            Activity : {{" " + activity?.activity}}
+        </li>
+        <li>
+            Price : {{" " + activity?.checkPrice()}}
+        </li>
+        <li>
+            Accessibility : {{" " +activity?.checkAvailability()}}
+        </li>
+    </ul>
 </div>
